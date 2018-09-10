@@ -7,7 +7,7 @@
  - virtualbox安装与使用
  - linux 基本命令
 
-### HTML学习
+### [HTML学习](HTML)
  - H5存储
  - H5动画实现
  - SVG 《SVG精髓》
@@ -19,7 +19,7 @@
  - CSS3 vw、vh、vmin、vmax
 
 
-### JS学习
+### [JS学习](JS)
  - 学习文档 [JS标准学习](http://wiki.n.miui.com/pages/viewpage.action?pageId=12786083)
  - DOM
  - koa 
