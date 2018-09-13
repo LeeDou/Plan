@@ -92,6 +92,7 @@ If the top and bottom margins of a box are adjoining, then it is possible for ma
 
   __boder-style__:  'border-top-style', 'border-right-style', 'border-bottom-style', 'border-left-style', and 'border-style'
 
+
     - none
       No border; the computed border width is zero.
     - hidden
