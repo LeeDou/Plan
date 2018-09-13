@@ -13,7 +13,7 @@
  - SVG 《SVG精髓》
 
 ### [CSS学习](CSS)
- - 学习文档 [CSS标准学习](http://wiki.n.miui.com/pages/viewpage.action?pageId=10697911)
+ - 学习文档 [CSS标准学习](https://www.w3.org/TR/2011/REC-CSS2-20110607/#minitoc)
  - CSS3 动画 canvas
  - CSS定位与布局
  - CSS3 vw、vh、vmin、vmax
