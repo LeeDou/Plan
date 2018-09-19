@@ -24,11 +24,11 @@
 ## box offsets: top,right,bottom,left
 ```js
   'top'|bottom|left|right
-  Value:  	<length> | <percentage> | auto | inherit
-  Initial:  	auto
-  Applies to:  	positioned elements
-  Inherited:  	no
-  Percentages:  	refer to height of containing block
-  Media:  	visual
-  Computed value:  	if specified as a length, the corresponding absolute length; if specified as a percentage, the specified value; otherwise, 'auto'.
+    Value:  	<length> | <percentage> | auto | inherit
+    Initial:  	auto
+    Applies to:  	positioned elements
+    Inherited:  	no
+    Percentages:  	refer to height of containing block
+    Media:  	visual
+    Computed value:  	if specified as a length, the corresponding absolute length; if specified as a percentage, the specified value; otherwise, 'auto'.
 ```
