@@ -32,3 +32,23 @@
     Media:  	visual
     Computed value:  	if specified as a length, the corresponding absolute length; if specified as a percentage, the specified value; otherwise, 'auto'.
 ```
+
+## Normal flow
+> Boxes in the normal flow belong to a formatting context, which may be block or inline, but not both simultaneously. Block-level boxes participate in a block formatting context. Inline-level boxes participate in an inline formatting context.
+
+### block formatting contexts (块级格式化上下文)
+浮动、绝对定位、块容器（例如 inline-blocks,table-cells,table-captions）不是块盒子，块盒子的溢出超出视图为他的内容创建新的盒模式不是块盒子
+
+### inline formating context （行内格式化上下文）
+In an inline formatting context, boxes are laid out horizontally, one after the other, beginning at the top of a containing block. Horizontal margins, borders, and padding are respected between these boxes. The boxes may be aligned vertically in different ways: their bottoms or tops may be aligned, or the baselines of text within them may be aligned. The rectangular area that contains the boxes that form a line is called a line box.
+> 在行内格式化上下文中，元素都是一个接一个水平排布，水平margin、border、padding在每个元素之间，每个盒子可能有不同的垂直对齐方式，
+
+## ralative positioning (相对定位)
+Once a box has been laid out according to the normal flow or floated, it may be shifted relative to this position. This is called relative positioning. 
+相对定位元素会保持正常的大小，left,right改变元素的水平位置，盒子不会因left或right而撕裂或拉伸，所以有value `left = -right`
+> If both 'left' and 'right' are 'auto' (their initial values), the used values are '0' (i.e., the boxes stay in their original position).
+If 'left' is 'auto', its used value is minus the value of 'right' (i.e., the boxes move to the left by the value of 'right').
+If 'right' is specified as 'auto', its used value is minus the value of 'left'.
+If neither 'left' nor 'right' is 'auto', the position is over-constrained, and one of them has to be ignored. If the 'direction' property of the containing block is 'ltr', the value of 'left' wins and 'right' becomes -'left'. If 'direction' of the containing block is 'rtl', 'right' wins and 'left' is ignored.
+
+## floats (浮动)
