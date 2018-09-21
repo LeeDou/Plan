@@ -54,3 +54,30 @@ If neither 'left' nor 'right' is 'auto', the position is over-constrained, and o
 ## floats (浮动)
 A float is a box that is shifted to the left or right on the current line. 
 浮动盒子就是在当前行内移动到左或右
+
+- Positioning the float: the__'float'__ property
+  ```js
+  float
+    value: left|right|none|inherit
+    initial: none
+    applies to: all
+    perv=centages: N/A
+    media: visual
+    computed value: as specified
+  ```
+- controlling flow next to floats: the 'clear' property
+  ```js
+    clear
+      value: none|left|right|both|inherit
+      initial: none
+      applies to: block-leval elements
+      inheited: no
+      percentages: N/A
+      media: visual
+      computed: as sepcified
+  ```
+
+## absolute positionig
+绝对定位元素，会显示地在正常文档流中移除，绝对定位盒子会建立一个新的包含正常文档流的文档块，但不包含fixed元素。绝对定位文档流或许会覆盖正常文档流也可能被正常文档流覆盖，这取决于他的层叠样式层级（z-index）
+### fixed positioninig 
+fixed positionig 是 absolute positioning的子集，他们唯一的区别是fixed 定位的包含区块是建立在视图（viewport）,对于连续的媒体，当文件（document）滑动时绝对定位元素不会移动。
