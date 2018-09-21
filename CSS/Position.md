@@ -52,3 +52,5 @@ If 'right' is specified as 'auto', its used value is minus the value of 'left'.
 If neither 'left' nor 'right' is 'auto', the position is over-constrained, and one of them has to be ignored. If the 'direction' property of the containing block is 'ltr', the value of 'left' wins and 'right' becomes -'left'. If 'direction' of the containing block is 'rtl', 'right' wins and 'left' is ignored.
 
 ## floats (浮动)
+A float is a box that is shifted to the left or right on the current line. 
+浮动盒子就是在当前行内移动到左或右

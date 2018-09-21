@@ -12,6 +12,7 @@
 
 - CSS3 动画 canvas
 - CSS定位与布局
+  - grid &radic;
 - CSS3 vw、vh、vmin、vmax
 
 ## 已完成列表
