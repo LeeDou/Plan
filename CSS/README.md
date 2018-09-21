@@ -12,7 +12,7 @@
 
 - CSS3 动画 canvas
 - CSS定位与布局
-  - grid &radic;
+  - grid 布局基本概念 &radic;
 - CSS3 vw、vh、vmin、vmax
 
 ## 已完成列表
@@ -22,3 +22,4 @@
  - [Media type](Media.md)
  - [box model](Box.md)
  - [position](Position.md)
+ - gird 布局基本概念(Grid.md)
