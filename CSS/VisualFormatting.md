@@ -11,3 +11,13 @@ The position and size of an element's box(es) are sometimes calculated relative 
   If there is no such ancestor, the containing block is the initial containing block.（如果没有这样的祖先元素，则包含块是根包含块）
   
 ![包含块](/img/containing.png)
+
+## content width: the'width' property
+`'width'`
+  Value:  	<length> | <percentage> | auto | inherit
+  Initial:  	auto
+  Applies to:  	all elements but non-replaced inline elements, table rows, and row groups
+  Inherited:  	no
+  Percentages:  	refer to width of containing block
+  Media:  	visual
+  Computed value:  	the percentage or 'auto' as specified or the absolute length
