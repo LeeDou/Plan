@@ -21,3 +21,9 @@ The position and size of an element's box(es) are sometimes calculated relative 
   Percentages:  	refer to width of containing block
   Media:  	visual
   Computed value:  	the percentage or 'auto' as specified or the absolute length
+
+## minimum and maximum widths: 'min-width'and'max-width'
+These two properties allow authors to constrain content widths to a certain range（这两个属性允许用户强制内容在一个确定的范围内）
+width计算规则：
+![width](/img/width.jpg)
+
