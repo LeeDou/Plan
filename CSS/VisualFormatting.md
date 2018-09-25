@@ -6,8 +6,8 @@ The position and size of an element's box(es) are sometimes calculated relative 
 2. For other elements, if the element's position is 'relative' or 'static', the containing block is formed by the content edge of the nearest block container ancestor box.
 3. If the element has 'position: fixed', the containing block is established by the viewport in the case of continuous media or the page area in the case of paged media.
 4. If the element has 'position: absolute', the containing block is established by the nearest ancestor with a 'position' of 'absolute', 'relative' or 'fixed', in the following way: （对于absolute属性元素，包含块可以是absolute、relative、fixed）
-  1. In the case that the ancestor is an inline element, the containing block is the bounding box around the padding boxes of the first and the last inline boxes generated for that element. In CSS 2.1, if the inline element is split across multiple lines, the containing block is undefined.
-  2. Otherwise, the containing block is formed by the padding edge of the ancestor.（如果祖先元素是行内元素，则包含块的大小由包含元素的填充边界）
+  - In the case that the ancestor is an inline element, the containing block is the bounding box around the padding boxes of the first and the last inline boxes generated for that element. In CSS 2.1, if the inline element is split across multiple lines, the containing block is undefined.
+  - Otherwise, the containing block is formed by the padding edge of the ancestor.（如果祖先元素是行内元素，则包含块的大小由包含元素的填充边界）
   If there is no such ancestor, the containing block is the initial containing block.（如果没有这样的祖先元素，则包含块是根包含块）
   
 ![包含块](/img/containing.png)
