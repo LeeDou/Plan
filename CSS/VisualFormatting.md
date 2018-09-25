@@ -9,4 +9,4 @@ The position and size of an element's box(es) are sometimes calculated relative 
   1. In the case that the ancestor is an inline element, the containing block is the bounding box around the padding boxes of the first and the last inline boxes generated for that element. In CSS 2.1, if the inline element is split across multiple lines, the containing block is undefined.
   2. Otherwise, the containing block is formed by the padding edge of the ancestor.（如果祖先元素是行内元素，则包含块的大小由包含元素的填充边界）
   If there is no such ancestor, the containing block is the initial containing block.（如果没有这样的祖先元素，则包含块是根包含块）
-  [包含块](!img/containing.png)
+  ![包含块](img/containing.png)
