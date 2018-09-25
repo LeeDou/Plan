@@ -90,7 +90,7 @@ fixed positionig 是 absolute positioning的子集，他们唯一的区别是fix
 4. Otherwise, if the element is the root element, 'display' is set according to the table below, except that it is undefined in CSS 2.1 whether a specified value of 'list-item' becomes a computed value of 'block' or 'list-item'.
 5. Otherwise, the remaining 'display' property values apply as specified.
 | specified value | computed value |
-| :----: | :----: |
+| :---: | :---: |
 | inline-table | table |
 | inline,table-row-group,table-column-group,table-column,table-header-group,table-row,table-cell,table-caption,inline-block | block |
 | others | same as specified |
