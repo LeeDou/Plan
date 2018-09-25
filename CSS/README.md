@@ -9,6 +9,7 @@
   - CSS2.1 Box model   &radic;
   - CSS2.1 Visual formatting model
     - position schemes  &radic;
+    - Visual formatting model details 
 
 - CSS3 动画 canvas
 - CSS定位与布局
