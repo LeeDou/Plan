@@ -27,3 +27,14 @@ These two properties allow authors to constrain content widths to a certain rang
 width计算规则：
 ![width](/img/width.jpg)
 
+## content height： the 'height' property
+__'height'__ 
+  Value:  	<length> | <percentage> | auto | inherit
+  Initial:  	auto
+  Applies to:  	all elements but non-replaced inline elements, table columns, and column groups
+  Inherited:  	no
+  Percentages:  	see prose
+  Media:  	visual
+  Computed value:  	the percentage or 'auto' (see prose under <percentage>) or the absolute length
+
+
