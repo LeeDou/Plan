@@ -3,4 +3,4 @@
 ## 学习列表
 
 ## 完成列表
-- [function*](function_) 
+- [function*](function_.md) 
