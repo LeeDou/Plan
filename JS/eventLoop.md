@@ -17,6 +17,7 @@ https://juejin.im/post/5aab2d896fb9a028b86dc2fd
 宏任务包括： setTimeout,setInterval,setImmediate,I/O;
 
 ## Node 环境下的Event Loop
+```
    ┌───────────────────────┐
 ┌─>│        timers         │
 │  └──────────┬────────────┘
@@ -35,6 +36,7 @@ https://juejin.im/post/5aab2d896fb9a028b86dc2fd
 │  ┌──────────┴────────────┐
 └──┤    close callbacks    │
    └───────────────────────┘
+```
 node中的时间循环与浏览器中的不一样    
 - timers 阶段： 这个阶段执行setTimeout（callback）and setInterval（callback）预定的callback；
 - I/O callback阶段： 执行除了close事件的callback，被timers（定时器，setTimeout，setInterval等）设定的callbacks，setImmediate()设定的callback之外的callback
