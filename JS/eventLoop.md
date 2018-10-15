@@ -106,4 +106,6 @@ immediate
 timeout
 ```
 
+[event loop 文档](https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/)
+
 
