@@ -1,4 +1,3 @@
-https://juejin.im/post/5aab2d896fb9a028b86dc2fd
 
 # Event Loop
 顾名思义，Event Loop就是事件循环的意思，js 事件就是要按照一定的规则排序执行。Event Loop在不同的环境下有着不同的方式。
@@ -107,5 +106,7 @@ timeout
 ```
 
 [event loop 文档](https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/)
+
+[掘金](https://juejin.im/post/5aab2d896fb9a028b86dc2fd)
 
 
