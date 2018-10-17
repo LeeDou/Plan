@@ -21,5 +21,5 @@
 现代计算机三大组成部分： CPU（集合控制和运算）、I/O、主存储器。    
 CPU和主存储器合起来称为主机，I/O设备称为外部设备    
 ![冯](/img/feng.jpg)
-![now](/img/nowcomputer)     
+![now](/img/nowcomputer.jpg)     
 算术逻辑单元（Arithmetic Logic Unit，ALU）简称算罗部件。
