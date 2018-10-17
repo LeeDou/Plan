@@ -34,6 +34,7 @@
  - 操作系统
  - 数据结构与数据库
  - 算法
+ - [计算机系统组成](ComputerBasis/Organization.md)
  
 ### 项目相关
   - webpack、gulp、grunt、fis深入比较
