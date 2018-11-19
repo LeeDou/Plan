@@ -102,6 +102,7 @@ co(function* () {
 - 模板列表 list 模板选项列表
 文件夹结构
 ```
+newapm
 ├─bin
 │      apm
 │      commander.js
@@ -119,9 +120,229 @@ co(function* () {
 │  main.js
 │  package-lock.json
 │  package.json
-│  README.md
-│  templates.json  
+│  templates.json
+└─ README.md
 ```
 
+### 初始化项目
+新建项目后执行
+`npm init`
+然后继续执行
+```js
+npm i chalk co co-prompt commander --save
+```
+执行后package.json 如下：
+```js
+"dependencies": {
+  "chalk": "^2.4.1",
+  "co": "^4.5.0",
+  "co-prompt": "^1.0.0",
+  "commander": "^2.9.0"
+}
+```
 
-https://segmentfault.com/a/1190000006190814
+在根目录下新建\bin文件夹，在里面建一个无后缀名的apm文件，这个bin\apm就是整个脚手架入口。
+初始化代码
+```js
+#!/usr/bin/env node
+
+process.env.NODE_PATH = __dirname + '../node_modules/'
+
+const program = require('commander')
+
+// 定义当前脚本
+program
+  .version(require('../package').version)
+
+// 定义使用方法
+program
+  .usage('<command>')
+
+```
+这样就完成了apm脚手架的一个基本结构接下来就一一实现其他四个功能
+### 具体实现
+- init 
+apm文件修改如吓
+```js
+program
+  .command('init')
+  .description('Generate a new project')
+  .alias('i')
+  .action(() => {
+      require('../command/init')()
+  })
+```
+在根目录下新建command文件夹，文件夹下新建init.js 
+```js
+'use strict'
+const exec = require('child_process').exec
+const co = require('co')
+const prompt = require('co-prompt')
+const config = require('../templates')
+const chalk = require('chalk')
+
+module.exports = () => {
+ 	co(function *() {
+  	let tplName = yield prompt('Template name: ')
+  	let projectName = yield prompt('Project name: ')
+  	let gitUrl
+  	let branch
+
+	if (!config.tpl[tplName]) {
+    	console.log(chalk.red('\n × Template does not exit!'))
+    	process.exit()
+    }
+		gitUrl = config.tpl[tplName].url
+		branch = config.tpl[tplName].branch
+
+    // 将模板克隆到指定的项目下面
+    let cmdStr = `git clone -b ${branch} ${gitUrl} ${projectName}`
+
+	  console.log(chalk.white('\n Start generating...'))
+
+	  exec(cmdStr, (error, stdout, stderr) => {
+      if (error) {
+        console.log(error)
+        process.exit()
+      }
+      console.log(chalk.green('\n √ Generation completed!'))
+      console.log(`\n cd ${projectName} && npm install \n`)
+      process.exit()
+	  })
+  })
+}
+```
+- add 添加模板
+apm 文件修改如下
+```js
+program
+	.command('add')
+	.description('Add a new template')
+    .alias('a')
+    .action(() => {
+        require('../command/add')()
+    })
+```
+command文件夹下新建add.js 文件
+```js
+'use strict'
+const co = require('co')
+const prompt = require('co-prompt')
+const config = require('../templates')
+const chalk = require('chalk')
+const fs = require('fs')
+
+module.exports = () => {
+ co(function *() {
+
+   // 分步接收用户输入的参数
+   let tplName = yield prompt('Template name: ')
+   let gitUrl = yield prompt('Git https link: ')
+   let branch = yield prompt('Branch: ')
+    
+   // 避免重复添加
+   if (!config.tpl[tplName]) {
+     config.tpl[tplName] = {}
+     config.tpl[tplName]['url'] = gitUrl.replace(/[\u0000-\u0019]/g, '') // 过滤unicode字符
+     config.tpl[tplName]['branch'] = branch
+   } else {
+     console.log(chalk.red('Template has already existed!'))
+     process.exit()
+   }
+   
+   // 把模板信息写入templates.json
+   fs.writeFile(__dirname + '/../templates.json', JSON.stringify(config), 'utf-8', (err) => {
+     if (err) console.log(err)
+     console.log(chalk.green('New template added!\n'))
+     console.log(chalk.grey('The last template list is: \n'))
+     console.log(config)
+     console.log('\n')
+     process.exit()
+    })
+ })
+}
+```
+
+同理我们可以添加list 和 delete功能
+最终apm 文件如下：
+```js
+program
+	.usage('<command>')
+
+program
+	.command('add')
+	.description('Add a new template')
+  .alias('a')
+  .action(() => {
+    require('../command/add')()
+  })
+
+program
+	.command('list')
+	.description('List all the templates')
+	.alias('l')
+	.action(() => {
+		require('../command/list')()
+	})
+
+program
+	.command('init')
+	.description('Generate a new project')
+  .alias('i')
+  .action(() => {
+    require('../command/init')()
+  })
+
+program
+	.command('delete')
+	.description('Delete a template')
+	.alias('d')
+	.action(() => {
+		require('../command/delete')()
+	})
+```
+
+list.js 入下
+```js
+'use strict'
+const config = require('../templates')
+
+module.exports = () => {
+     console.log(config.tpl)
+     process.exit()
+}
+```
+delete.js 如下
+```js
+'use strict'
+const co = require('co')
+const prompt = require('co-prompt')
+const config = require('../templates')
+const chalk = require('chalk')
+const fs = require('fs')
+
+module.exports = () => {
+ 	co(function *() {
+  	let tplName = yield prompt('Template name: ')
+
+  	if (config.tpl[tplName]) {
+      config.tpl[tplName] = undefined
+    } else {
+      console.log(chalk.red('Template does not exist!'))
+      process.exit()
+    }
+
+		fs.writeFile(__dirname + '/../templates.json', JSON.stringify(config), 'utf-8', (err) => {
+			if (err) console.log(err)
+			console.log(chalk.green('Template deleted!'))
+      console.log(chalk.grey('The last template list is: \n'))
+      console.log(config)
+      console.log('\n')
+			process.exit()
+		})
+  })
+}
+```
+
+### 结语
+这样就完成了一个简单的脚手架功能，当然，一个成熟的脚手架会包含更多的功能，未来也将持续的学习，不断来更新。
