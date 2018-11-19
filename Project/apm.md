@@ -52,6 +52,48 @@ commandr.js 中命令行有两种可变性，一个叫做option，意为选项�
   - 低三个参数一般不用，他可以设置是否显示的使用子命令模式
 
 
+## co-prompt
+co-prompt 实现命令行交互   
+co-prompt 模块依赖于 co模块，所以使用co-prompt 需要安装co模块（co 是一个异步程序处理模块）   
+
+### API
+
+__普通文本提示__
+- prompt(msg)
+  - msg `<string>`提示信息具体内容
+**密码文本提示，密码非明文显示**
+- prompt.passward(msg, [mask])
+  - msg `<string>` 提示信息的具体内容
+  - mask `<string>` 输入密码时的显示替换字符，默认是"*"
+
+**多行文本提示**
+- prompt.multiline(msg)
+  - msg `<string>` 提示用户信息的具体内容
+
+**确认提示信息**
+- prompt.confirm(msg)
+  - msg `<string>` 提示用户信息的具体内容
+  - 返回值 `<bool>` true|false
+  > confirm() 方法只在用户输入[y|yes|ok|true] 这四个值时（不区分大小写），才返回true ，其它情况都是 false     
+
+### 综合例子
+```js
+var co = require('co')
+var prompt = require('prompt')
+
+co(function* () {
+    var username = yield prompt('username: ');
+    var pwd = yield prompt.password('password: ');
+    var desc = yield prompt.multiline('description: ');
+    var ok = yield prompt.confirm('are you sure?(yes|no)');
+    console.log('hello %s %s\n', username, pwd);
+    console.log('you descrption as:\n' + desc);
+    console.log('answer: %s\n', ok);
+    process.exit();
+})
+```
+
+
 
 
 https://segmentfault.com/a/1190000006190814
