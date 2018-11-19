@@ -93,7 +93,35 @@ co(function* () {
 })
 ```
 
+## 现在开始从头构建一个脚手架程序
 
+### 整体结构
+- 初始化项目 init 从已添加的模板中选择，然后从远程仓库拉取
+- 添加模板 add 将模板选项添加到template.json中
+- 删除模板 delete 从template.json 删除模板选线
+- 模板列表 list 模板选项列表
+文件夹结构
+```
+├─bin
+│      apm
+│      commander.js
+│      express
+│      test
+│      
+├─command
+│      add.js
+│      delete.js
+│      init.js
+│      list.js
+│      
+├─node_modules
+│  .gitignore
+│  main.js
+│  package-lock.json
+│  package.json
+│  README.md
+│  templates.json  
+```
 
 
 https://segmentfault.com/a/1190000006190814
