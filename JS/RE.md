@@ -40,7 +40,6 @@ var arr = "the best things in life."
 var arr1 = arr.match(/[e]/g)  // [e, e]
 ```
 
-[正则](Other/Reg.md)
 
 ### 使用 RegExp对象
 在JavaScript中，Regexp对象十一预定义了属性和方法的正则表达式对象。
@@ -59,3 +58,6 @@ exec() 方法用于检测正则表达式中的匹配，返回一个数组存放�
 
 - toString
 返回正则表达式的字符串
+
+### 正则
+[正则语法移步](/Other/Reg.md)
