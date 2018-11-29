@@ -200,5 +200,5 @@ www.runoob.com
 
 
 ### JS 中正则的使用
-[RE](JS/RE.md)
+[RE](/JS/RE.md)
 
