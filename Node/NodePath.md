@@ -1,4 +1,4 @@
-# 环境变量配置
+# npm环境变量配置
 
 背景： 随着前端npm的应用，我们会在全局安装各种插件，由于全局安装就会占用C盘空间，及缓存。通过配置npm 安装全局模块的路径，就可以解决以上问题。
 
@@ -46,9 +46,22 @@ D:\node\node\node_global\;
 修改系统变量[PATH]增加[D:\Program\node\node_global]
 即：
 path=D:\Program\node\node_global
-NODE_PATH=D:\Program\node_global\node_modules
+NODE_PATH=D:\Program\node\node_global\node_modules
 
 // C:\User\[用户名]\AppData\Roaming\npm --> [D:\Program\node\node_global]  这条指令改变的是执行路径
+
+### 最后检测npm环境变量配置是否成功
+1. 检测npm全局路径是否配置成功
+`npm install webpack -g`
+可以看到：
+![安装路径](/img/npmpath.jpg)
+已经将webpack安装在了D:\Program\node\node_global目录下
+
+2. 检测node全局路径是否配置正确，正确的话cmd会输出相关信息
+执行
+`Ctrl+r`
+输入cmd，进入node环境
+![rquire](/img/npmwebpack.jpg)
 
 
 
