@@ -28,6 +28,7 @@
  - koa 
  - async/await
  - ES6、ES7
+ - [环境变量配置](Node/NodePath.md)
    
    
 ### 计算机基础学习
