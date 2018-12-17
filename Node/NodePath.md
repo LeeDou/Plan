@@ -38,8 +38,9 @@ cache=D:\Program\node\node_cache
 ![环境变量](/img/nodepath.jpg)
 1. 方法一：
 进入环境变量对话框，在用户变量下修改[PATH] 添加
-D:\node\node\node_global\;
-这种方法不需要添加系统环境变量NODE_PATH,只需要编辑用户变量
+D:\Program\node\node_global\;
+添加[NODE_PATH]  
+D:\Program\node\node_global\node_modules
 
 2. 方法二：
 进入环境变量对话框，新建系统变量[NODE_PATH] 值为 [D:\Program\node\node_global\node_modules] 
