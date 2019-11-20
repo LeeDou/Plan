@@ -1,4 +1,5 @@
 // 实现观察者模式代码
+```js
 class Sub {
   constructor (state) {
      this.state = state;
@@ -32,3 +33,4 @@ class Watcher {
     console.log('name: ', this.name, ' state: ', this.state)
   }
 }
+```
