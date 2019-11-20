@@ -1,5 +1,5 @@
-// 实现观察者模式代码
 ```js
+// 实现观察者模式代码
 class Sub {
   constructor (state) {
      this.state = state;
