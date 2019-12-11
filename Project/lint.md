@@ -49,7 +49,7 @@ npm install husky --save-dev
 通过以上，无论是pre-commit 还是 husky ，我们都已经声明了在 pre-commit 这个钩子，但是在钩子中具体操作是 `lint-staged` ，那 lint-staged 又是什么？
 
 ### [lint-staged](https://github.com/okonet/lint-staged)
-staged 是 git 的暂存区概念，lint-staged 的目的在于，将代码提交到暂存区时执行。
+staged 是 git 的暂存区概念，lint-staged 的目的在于，将代码从暂存区(stage)提交到分支时执行。
 安装 lint-staged 
 ```
 npm install lint-staged --save-dev
