@@ -52,6 +52,6 @@
   - [eslint](Other/eslint.md)
   - [windowsTree](Other/windowsTree.md)
   - [cookie](Other/cookie.md)
-  - 项目检查及格式化 [lint](Project/lintt.md)
+  - 项目检查及格式化 [lint](Project/lint.md)
   
   
