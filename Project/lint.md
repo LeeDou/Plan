@@ -5,7 +5,7 @@
 要实现代码提交前的检查，可以考虑到git 提供的钩子函数 pre-commit，即在git commit 执行前的钩子函数，在pre-commit 中对代码进行检查并修改。   
 goole 一下发现，原来还存在 husky 这个插件可以帮助实现代码检查及修改。
 
-### pre-commit 
+### [pre-commit](https://pre-commit.com/) 
 pre-commit能够防止不规范代码被commit
 首先安装 pre-commit
 ```
@@ -24,7 +24,7 @@ pre-commit能够防止不规范代码被commit
 
 通过执行 check 脚本，来实现对代码的检查修改。
 
-### husky
+### [husky](https://github.com/typicode/husky)
 husky 也可以用来防止代码不规范提交的插件，但是相比 pre-commit 提供了更加强大的功能，husky 可以执行 pre-commit pre-push 等生命周期。husky 姑且可以认为是 git 钩子函数的一个代理集合。
 安装 husky
 > 在安装 husky 的时候，husky会根据 package.json里的配置，在.git/hooks 目录生成所有的 hook 脚本（如果你已经自定义了一个hook脚本，husky不会覆盖它）  
@@ -48,7 +48,7 @@ npm install husky --save-dev
 
 通过以上，无论是pre-commit 还是 husky ，我们都已经声明了在 pre-commit 这个钩子，但是在钩子中具体操作是 `lint-staged` ，那 lint-staged 又是什么？
 
-### lint-staged
+### [lint-staged](https://github.com/okonet/lint-staged)
 staged 是 git 的暂存区概念，lint-staged 的目的在于，将代码提交到暂存区时执行。
 安装 lint-staged 
 ```
@@ -66,7 +66,7 @@ npm install lint-staged --save-dev
 
 可以看到，先执行 eslint 对代码扫描并修改，然后执行 prettier 脚本来对代码格式化。
 
-### [eslint](!https://eslint.org/docs/user-guide/getting-started)
+### [eslint](https://eslint.org/docs/user-guide/getting-started)
 安装 eslint 
 ```
 npm install eslint --save-dev
@@ -96,7 +96,7 @@ npx eslint --init 会在文件中生成 .eslintrc.js 文件
 }
 ```
 
-### [prettier](!https://prettier.io/docs/en/install.html)
+### [prettier](https://prettier.io/docs/en/install.html)
 prettier 是一个格式化代码工具
 安装 prettier 
 ```
