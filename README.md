@@ -29,6 +29,7 @@
  - async/await
  - ES6、ES7
  - [环境变量配置](Node/NodePath.md)
+ - npx
    
    
 ### 计算机基础学习
@@ -51,5 +52,6 @@
   - [eslint](Other/eslint.md)
   - [windowsTree](Other/windowsTree.md)
   - [cookie](Other/cookie.md)
+  - 项目检查及格式化 [lint](Project/lint.md)
   
   
