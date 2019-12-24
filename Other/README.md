@@ -1,3 +1,4 @@
+
 ## 讀書安排
 圖解
 
@@ -9,5 +10,5 @@
 [https://yeoman.io/](https://yeoman.io/)  
 [D2](https://github.com/d2forum/14th/blob/master/README.md)  
 
-
+chrome://inspect/#devices
 
