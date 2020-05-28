@@ -4,3 +4,5 @@
 - [HTTP](HTTP.md)
 - [Nginx](Nginx.md)
 - 项目代码检查格式化 [lint](lint.md)
+
+- prettier 格式化代码
